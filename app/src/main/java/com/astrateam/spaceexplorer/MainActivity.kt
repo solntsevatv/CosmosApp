@@ -1,4 +1,4 @@
-package com.example.spaceexplorer
+package com.astrateam.spaceexplorer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

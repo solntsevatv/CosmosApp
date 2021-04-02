@@ -1,2 +1,4 @@
+include ':database'
+include ':network'
 include ':app'
 rootProject.name = "Space Explorer"

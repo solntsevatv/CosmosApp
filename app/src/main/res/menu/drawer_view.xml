@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/space_elements"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_earth_fragment"
+            android:title="@string/earth" />
+        <item
+            android:id="@+id/nav_mars_fragment"
+            android:title="@string/mars" />
+        <item
+            android:id="@+id/nav_moon_fragment"
+            android:title="@string/moon" />
+        <item
+            android:id="@+id/nav_object_fragment"
+            android:title="@string/space_object" />
+        <item
+            android:id="@+id/nav_favourite_items_fragment"
+            android:title="@string/favourite_items" />
+    </group>
+
+    <group
+        android:id="@+id/special_elements"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings_fragment"
+            android:title="@string/settings" />
+        <item
+            android:id="@+id/nav_dev_info_fragment"
+            android:title="@string/dev_info" />
+    </group>
+</menu>

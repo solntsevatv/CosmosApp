@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <group
         android:id="@+id/space_elements"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_earth_fragment"
+            android:id="@id/spaceBodyFragment"
             android:title="@string/earth" />
         <item
-            android:id="@+id/nav_mars_fragment"
+            android:id="@id/spaceBodyFragment"
             android:title="@string/mars" />
         <item
-            android:id="@+id/nav_moon_fragment"
-            android:title="@string/moon" />
+            android:id="@id/spaceBodyFragment"
+            android:title="@string/moon"/>
         <item
-            android:id="@+id/nav_object_fragment"
+            android:id="@id/spaceBodyFragment"
             android:title="@string/space_object" />
         <item
             android:id="@+id/nav_favourite_items_fragment"

@@ -1,4 +1,4 @@
-package com.astrateam.spaceapi
+package com.astrateam.network
 
 import org.junit.Test
 

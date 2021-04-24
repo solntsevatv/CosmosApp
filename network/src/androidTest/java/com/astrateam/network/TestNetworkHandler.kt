@@ -1,27 +1,34 @@
 package com.astrateam.network
 
+import android.content.Context
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class TestNetworkHandler {
 
-    @Test
-    fun useGetPicture() {
-        val response = NetworkHandler.getPicture().execute()
-        assert(response.isSuccessful)
+    fun getContext(): Context {
+        return InstrumentationRegistry.getInstrumentation().context
     }
 
     @Test
-    fun useGetMarsWeather() {
-        val response = NetworkHandler.getMarsWeather().execute()
-        assert(response.isSuccessful)
+    fun useGetPicture() = runBlocking {
+        val response = NetworkHandler.getPicture()
+        assert(!response.url.isNullOrEmpty())
     }
 
     @Test
-    fun useGetMediaAssetsList() {
-        val response = NetworkHandler.getMediaAssetsList("moon").execute()
-        assert(response.isSuccessful)
+    fun useGetMarsWeather() = runBlocking {
+        val response = NetworkHandler.getMarsWeather()
+        assert(response.sols.isNotEmpty())
+    }
+
+    @Test
+    fun useGetMediaAssetsList() = runBlocking {
+        val response = NetworkHandler.getMediaAssetsList("moon")
+        assert(response.items.isNotEmpty())
     }
 }

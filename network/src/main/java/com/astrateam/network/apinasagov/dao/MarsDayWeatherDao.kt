@@ -21,6 +21,12 @@ data class MarsDayWeatherDao(
     @SerializedName("Month_ordinal")
     var month: Int?,
 
+    @SerializedName("AT")
+    var temperature: WeatherNumericParamDao?,
+
     @SerializedName("PRE")
-    var pre: MarsDayWeatherPreDao?
+    var pressure: WeatherNumericParamDao?,
+
+    @SerializedName("HWS")
+    var windSpeed: WeatherNumericParamDao?
 )

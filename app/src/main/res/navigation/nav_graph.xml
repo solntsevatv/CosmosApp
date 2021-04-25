@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startScreenFragment">
+
+    <fragment
+        android:id="@+id/startScreenFragment"
+        android:name="com.astrateam.spaceexplorer.startscreen.StartScreenFragment"
+        android:label="start_screen_fragment"
+        tools:layout="@layout/start_screen_fragment">
+        <action
+            android:id="@+id/action_startScreenFragment_to_spaceBodyFragment"
+            app:destination="@id/spaceBodyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/spaceBodyFragment"
+        android:name="com.astrateam.spaceexplorer.spacebody.SpaceBodyFragment"
+        android:label="space_body_fragment"
+        tools:layout="@layout/fragment_space_body" />
+</navigation>

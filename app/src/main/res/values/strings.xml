@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Space Explorer</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="moon">Луна</string>
+    <string name="space_object">Космическое тело</string>
+    <string name="favourite_items">Избранное</string>
+    <string name="settings">Настройки</string>
+    <string name="dev_info">О нас</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.astrateam.database
 
 import com.astrateam.database.model.MarsDayWeather
+import com.astrateam.database.model.MarsPhoto
 import com.astrateam.database.model.MediaAsset
 import com.astrateam.database.model.Picture
 import java.util.*
@@ -21,5 +22,9 @@ object CompositeRepository : ModelRepository {
         imageOnly: Boolean
     ): List<MediaAsset> {
         return NetworkRepository.getMediaAssets(day, count, query, imageOnly)
+    }
+
+    override suspend fun getMarsPhotos(day: Date): List<MarsPhoto> {
+        return NetworkRepository.getMarsPhotos(day)
     }
 }

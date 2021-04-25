@@ -7,6 +7,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -45,5 +46,13 @@ class NetworkRepositoryTest {
         Log.d(DEBUG_TAG, assets[0].title)
         Log.d(DEBUG_TAG, assets[0].body)
         assert(assets.size == 4)
+    }
+
+    @Test
+    fun useGetMarsPhotos() = runBlocking {
+        val date = SimpleDateFormat("yyyy-MM-dd").parse("2021-04-24")!!
+        val photos = NetworkRepository.getMarsPhotos(date)
+        photos.forEach { Log.d(DEBUG_TAG, "Mars photo url: " + it.url) }
+        assert(photos.isNotEmpty())
     }
 }

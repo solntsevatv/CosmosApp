@@ -5,13 +5,13 @@
         android:id="@+id/space_elements"
         android:checkableBehavior="single">
         <item
-            android:id="@id/spaceBodyFragment"
+            android:id="@+id/earthFragment"
             android:title="@string/earth" />
         <item
-            android:id="@id/spaceBodyFragment"
+            android:id="@+id/marsFragment"
             android:title="@string/mars" />
         <item
-            android:id="@id/spaceBodyFragment"
+            android:id="@+id/loonFragment"
             android:title="@string/moon"/>
         <item
             android:id="@id/spaceBodyFragment"

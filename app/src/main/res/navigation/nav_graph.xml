@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startScreenFragment"
-        android:name="com.astrateam.spaceexplorer.startscreen.StartScreenFragment"
+        android:name="com.astrateam.spaceexplorer.presentation.ui.fragment.StartScreenFragment"
         android:label="start_screen_fragment"
         tools:layout="@layout/start_screen_fragment">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/spaceBodyFragment"
-        android:name="com.astrateam.spaceexplorer.spacebody.SpaceBodyFragment"
+        android:name="com.astrateam.spaceexplorer.presentation.ui.fragment.SpaceBodyFragment"
         android:label="space_body_fragment"
         tools:layout="@layout/fragment_space_body" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.astrateam.spaceexplorer
+package com.astrateam.spaceexplorer.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.astrateam.spaceexplorer.R
 import com.astrateam.spaceexplorer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

@@ -1,18 +1,17 @@
-package com.astrateam.spaceexplorer.startscreen
+package com.astrateam.spaceexplorer.presentation.ui.viewmodel
 
-import android.accounts.NetworkErrorException
 import androidx.lifecycle.*
-import com.astrateam.spaceexplorer.domain.IUserRepository
-import com.astrateam.spaceexplorer.stubs.StubUserRepository
+import com.astrateam.database.CompositeRepository
+import com.astrateam.database.ModelRepository
+import com.astrateam.database.model.Picture
 import kotlinx.coroutines.launch
-import java.io.IOError
-import java.io.IOException
+import java.util.*
 
 class StartScreenViewModel : ViewModel() {
-    private val repository: IUserRepository = StubUserRepository()
+    private val repository: ModelRepository = CompositeRepository
 
-    private val _image: MutableLiveData<String> = MutableLiveData(null)
-    val image: LiveData<String>
+    private val _image: MutableLiveData<Picture> = MutableLiveData(null)
+    val image: LiveData<Picture>
         get() = _image
 
     private val _isLoading: MutableLiveData<UiState> = MutableLiveData(UiState.SLEEP)
@@ -27,7 +26,8 @@ class StartScreenViewModel : ViewModel() {
         viewModelScope.launch {
             runCatching {
                 changeUiState()
-                _image.value = repository.loadTodayImage()
+                val currentDate: Date = Calendar.getInstance().time
+                _image.value = repository.getPicture(currentDate)
             }.onFailure {
                 changeErrorUiState()
             }

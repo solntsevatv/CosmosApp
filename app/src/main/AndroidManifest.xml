@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SpaceExplorer">
-        <activity android:name="com.astrateam.spaceexplorer.MainActivity">
+        <activity android:name="com.astrateam.spaceexplorer.presentation.ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

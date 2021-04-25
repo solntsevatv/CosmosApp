@@ -41,27 +41,39 @@ android {
 
 dependencies {
     def nav_version = "2.3.5"
+    def lifecycle_vm_version = "2.2.0-rc03"
+    def lifecycle_version = "2.4.0-alpha01"
+    def glide_version = "4.12.0"
+    def core_ktx_version ="1.3.2"
+    def fragment_ktx_version ="1.3.2"
+    def appcompat_version = "1.2.0"
+    def material_version = "1.3.0"
+    def constraintlayout_version = "2.0.4"
+    def junit_version ="4.13.2"
+    def junit_ext_version ="1.1.2"
+    def espresso_version = "3.3.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation "androidx.fragment:fragment:1.3.2"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
 
-    def lifecycle_version = "2.2.0-rc03"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_vm_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    implementation project(path: ':network')
+    implementation project(path: ':database')
 }

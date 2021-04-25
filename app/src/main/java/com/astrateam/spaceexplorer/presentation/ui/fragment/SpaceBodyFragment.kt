@@ -1,4 +1,4 @@
-package com.astrateam.spaceexplorer.spacebody
+package com.astrateam.spaceexplorer.presentation.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

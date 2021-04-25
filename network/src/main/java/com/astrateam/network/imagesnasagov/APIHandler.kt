@@ -1,11 +1,9 @@
 package com.astrateam.network.imagesnasagov
 
-import com.astrateam.network.imagesnasagov.dao.MediaAssetDao
 import com.astrateam.network.imagesnasagov.dao.MediaAssetsListDao
 import com.astrateam.network.imagesnasagov.dao.MediaAssetsListDeserializer
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -34,7 +32,7 @@ class APIHandler private constructor() {
         val instance: APIHandler by lazy { APIHandler() }
     }
 
-    fun getMediaAssetsList(query: String): Call<MediaAssetsListDao> {
+    suspend fun getMediaAssetsList(query: String): MediaAssetsListDao {
         return apiInterface.getMediaAssetsList(query)
     }
 }

@@ -2,16 +2,16 @@ package com.astrateam.network.apinasagov.dao
 
 import com.google.gson.annotations.SerializedName
 
-data class MarsDayWeatherPreDao(
+data class WeatherNumericParamDao(
     @SerializedName("av")
-    var av: String?,
+    var av: Float,
 
     @SerializedName("ct")
-    var ct: String?,
+    var ct: Int,
 
     @SerializedName("mn")
-    var mn: String?,
+    var mn: Float,
 
     @SerializedName("mx")
-    var mx: String?
+    var mx: Float
 )

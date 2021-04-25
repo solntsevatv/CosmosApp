@@ -1,13 +1,13 @@
 package com.astrateam.network.apinasagov
 
 import com.astrateam.network.API_KEY
+import com.astrateam.network.apinasagov.dao.MarsPhotosListDao
 import com.astrateam.network.apinasagov.dao.MarsWeatherDao
 import com.astrateam.network.apinasagov.dao.MarsWeatherDeserializer
 import com.astrateam.network.apinasagov.dao.PictureDao
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -34,11 +34,15 @@ class APIHandler private constructor() {
         val instance: APIHandler by lazy { APIHandler() }
     }
 
-    fun getPicture(): Call<PictureDao> {
+    suspend fun getPicture(): PictureDao {
         return apiInterface.getPictureWithKey(API_KEY)
     }
 
-    fun getMarsWeather(): Call<MarsWeatherDao> {
+    suspend fun getMarsWeather(): MarsWeatherDao {
         return apiInterface.getMarsWeather(API_KEY, "json", "1.0")
+    }
+
+    suspend fun getMarsPhotos(date: String): MarsPhotosListDao {
+        return apiInterface.getMarsPhotos(API_KEY, date)
     }
 }

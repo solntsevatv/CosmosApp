@@ -11,15 +11,15 @@ class MarsWeatherDeserializer : JsonDeserializer<MarsWeatherDao> {
         typeOfT: Type?,
         context: JsonDeserializationContext?
     ): MarsWeatherDao {
-        val sols: MutableMap<Integer, MarsDayWeatherDao> = mutableMapOf()
-
-        for (entry in json!!.asJsonObject.entrySet()) {
-            entry.key.toIntOrNull()?.let {
+        val sols: MutableMap<Int, MarsDayWeatherDao> = mutableMapOf()
+        for (entry in json!!.asJsonObject["sol_keys"].asJsonArray) {
+            entry.asString.toInt().let {
                 val weather = context!!.deserialize<MarsDayWeatherDao>(
-                    entry.value, MarsDayWeatherDao::class.java
+                    json.asJsonObject[it.toString()],
+                    MarsDayWeatherDao::class.java
                 )
 
-                sols.put(it as Integer, weather)
+                sols.put(it, weather)
             }
         }
 

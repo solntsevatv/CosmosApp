@@ -1,6 +1,7 @@
 package com.astrateam.network.apinasagov
 
 import com.astrateam.network.API_KEY
+import com.astrateam.network.apinasagov.dao.MarsPhotosListDao
 import com.astrateam.network.apinasagov.dao.MarsWeatherDao
 import com.astrateam.network.apinasagov.dao.MarsWeatherDeserializer
 import com.astrateam.network.apinasagov.dao.PictureDao
@@ -39,5 +40,9 @@ class APIHandler private constructor() {
 
     suspend fun getMarsWeather(): MarsWeatherDao {
         return apiInterface.getMarsWeather(API_KEY, "json", "1.0")
+    }
+
+    suspend fun getMarsPhotos(date: String): MarsPhotosListDao {
+        return apiInterface.getMarsPhotos(API_KEY, date)
     }
 }

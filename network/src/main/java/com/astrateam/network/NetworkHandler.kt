@@ -1,5 +1,6 @@
 package com.astrateam.network
 
+import com.astrateam.network.apinasagov.dao.MarsPhotosListDao
 import com.astrateam.network.apinasagov.dao.MarsWeatherDao
 import com.astrateam.network.apinasagov.dao.PictureDao
 import com.astrateam.network.imagesnasagov.dao.MediaAssetsListDao
@@ -19,6 +20,10 @@ class NetworkHandler private constructor() {
 
         suspend fun getMediaAssetsList(query: String): MediaAssetsListDao {
             return APIHandler_MEDIA.instance.getMediaAssetsList(query)
+        }
+
+        suspend fun getMarsPhotosList(date: String): MarsPhotosListDao {
+            return APIHandler_API.instance.getMarsPhotos(date)
         }
     }
 }

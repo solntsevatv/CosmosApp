@@ -31,4 +31,10 @@ class TestNetworkHandler {
         val response = NetworkHandler.getMediaAssetsList("moon")
         assert(response.items.isNotEmpty())
     }
+
+    @Test
+    fun useGetMarsPhotosList() = runBlocking {
+        val response = NetworkHandler.getMarsPhotosList("2021-04-24")
+        assert(response.photos.size >= 4)
+    }
 }
